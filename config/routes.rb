@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
+  get 'spots/new', to: 'spots#new'
+  post 'spots', to: 'spots#create'
+  get 'spots/index', to: 'spots#index'
   
   resources :users, only: [:index, :show, :new, :create]
   resources :spots, only: [:create, :destroy]

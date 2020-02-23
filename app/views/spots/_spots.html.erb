@@ -1,0 +1,14 @@
+<ul class="list-unstyled">
+  <% spots.each do |spot| %>
+    <li class="media mb-3">
+      <div>
+        <%= link_to spot.user.name, user_path(spot.user) %> <span class="text-muted">posted at <%= spot.created_at %></span>
+      </div>
+      <div>
+        <p><%= spot.name %></p>
+        <%= link_to '詳細を見る', user_path(spot.user) %>
+      </div>
+    </li>
+  <% end %>
+  <%= paginate spots %>
+</ul>
