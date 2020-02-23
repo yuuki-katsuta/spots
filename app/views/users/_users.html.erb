@@ -6,6 +6,9 @@
           <div>
             <%= user.name %>
           </div>
+          <div>
+            <p class="profile"><%= link_to 'View profile', user_path(user) %></p>
+          </div>
         </div>
       </li>
     <% end %>
