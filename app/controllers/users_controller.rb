@@ -2,10 +2,15 @@ class UsersController < ApplicationController
   before_action :require_user_logged_in, only: [:index, :show]
   def index
     @users = User.order(id: :desc).page(params[:page]).per(15)
+    
   end
 
   def show
     @user = User.find(params[:id])
+    if logged_in?
+      @spot = current_user.spots.build
+      @spots = current_user.spots.order(id: :desc).page(params[:page])
+    end
   end
 
   def new
