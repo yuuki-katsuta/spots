@@ -5,7 +5,7 @@ class SpotsController < ApplicationController
   end
 
   def new
-    @spot = Spot.new
+    @spot = current_user.spots.new
   end
   
   def create

@@ -3,11 +3,17 @@
     <li class="media mb-3">
       <div>
         <%= link_to spot.user.name, user_path(spot.user) %> <span class="text-muted">posted at <%= spot.created_at %></span>
-      </div>
-      <div>
-        <p><%= spot.name %></p>
+      
+        <p>スポット名　<%= spot.name %></p>
         <%= link_to '詳細を見る', user_path(spot.user) %>
       </div>
+    <div>
+     <% if current_user == spot.user %>
+    　<%= link_to "Delete", spot, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm mb-1' %>
+    <% end %>
+    　
+      
+　　</div>
     </li>
   <% end %>
   <%= paginate spots %>

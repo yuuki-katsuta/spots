@@ -11,5 +11,5 @@ Rails.application.routes.draw do
   get 'spots/index', to: 'spots#index'
   
   resources :users, only: [:index, :show, :new, :create]
-  resources :spots, only: [:create, :destroy]
+  resources :spots, only: [:create, :destroy,]
 end
