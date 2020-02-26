@@ -9,7 +9,8 @@ Rails.application.routes.draw do
   get 'spots/new', to: 'spots#new'
   post 'spots', to: 'spots#create'
   get 'spots/index', to: 'spots#index'
+
   
   resources :users, only: [:index, :show, :new, :create]
-  resources :spots, only: [:create, :destroy,]
+  resources :spots, only: [:create, :destroy, :show]
 end

@@ -1,11 +1,21 @@
 class SpotsController < ApplicationController
-
+before_action :correct_user, only: [:destroy]
   def index
     @spots = Spot.all
   end
-
+  
   def new
     @spot = current_user.spots.new
+  end
+  
+  def show
+     @spot = Spot.find(params[:id])
+  end
+  
+  def destroy
+    @spot.destroy
+    flash[:success] = 'メッセージを削除しました。'
+    redirect_back(fallback_location: root_path)
   end
   
   def create
@@ -27,5 +37,11 @@ class SpotsController < ApplicationController
     params.require(:spot).permit(:name, :address, :about)
   end
   
+  def correct_user
+    @spot = current_user.spots.find_by(id: params[:id])
+    unless @spot
+      redirect_to root_url
+    end
+  end
   
 end

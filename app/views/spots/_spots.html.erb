@@ -1,19 +1,17 @@
 <ul class="list-unstyled">
   <% spots.each do |spot| %>
     <li class="media mb-3">
-      <div>
+      <div class="show">
         <%= link_to spot.user.name, user_path(spot.user) %> <span class="text-muted">posted at <%= spot.created_at %></span>
-      
-        <p>スポット名　<%= spot.name %></p>
-        <%= link_to '詳細を見る', user_path(spot.user) %>
+        <div class="show-menu">
+          <p>スポット名　<%= spot.name %></p>
+          <p>住所　<%= spot.address %></p>
+          <%= link_to '詳細を見る', spot, id: "detail-" + spot.id.to_s %>
+          <% if current_user == spot.user %>
+      　    <%= link_to "この投稿を削除する", spot, method: :delete, data: { confirm: "You sure?" }, class: 'mb-1' %>
+          <% end %>
+        </div>
       </div>
-    <div>
-     <% if current_user == spot.user %>
-    　<%= link_to "Delete", spot, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm mb-1' %>
-    <% end %>
-    　
-      
-　　</div>
     </li>
   <% end %>
   <%= paginate spots %>
