@@ -6,7 +6,7 @@
         <div class="show-menu">
           <p>スポット名　<%= spot.name %></p>
           <p>住所　<%= spot.address %></p>
-          <%= link_to '詳細を見る', spot, id: "detail-" + spot.id.to_s %>
+          <%= link_to '詳細を見る', spot, id: spot.id %>
           <% if current_user == spot.user %>
       　    <%= link_to "この投稿を削除する", spot, method: :delete, data: { confirm: "You sure?" }, class: 'mb-1' %>
           <% end %>
@@ -14,5 +14,11 @@
       </div>
     </li>
   <% end %>
+  <script type="text/javascript">
+  $('#spot_picture').bind('change', function() {
+    var size_in_megabytes = this.files[0].size/1024/1024;
+    if (size_in_megabytes > 5) {alert('Maximum file size is 5MB. Please choose a smaller file.');}
+  });
+  </script>
   <%= paginate spots %>
 </ul>

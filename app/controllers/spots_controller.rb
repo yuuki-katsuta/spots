@@ -1,4 +1,5 @@
 class SpotsController < ApplicationController
+before_action :require_user_logged_in
 before_action :correct_user, only: [:destroy]
   def index
     @spots = Spot.all
@@ -9,7 +10,7 @@ before_action :correct_user, only: [:destroy]
   end
   
   def show
-     @spot = Spot.find(params[:id])
+    @spot = Spot.find(params[:id])
   end
   
   def destroy
@@ -34,7 +35,7 @@ before_action :correct_user, only: [:destroy]
 
     # 投稿フォームからデータ抽出
   def spot_params
-    params.require(:spot).permit(:name, :address, :about)
+    params.require(:spot).permit(:name, :address, :about, :picture)
   end
   
   def correct_user

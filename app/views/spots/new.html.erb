@@ -1,10 +1,15 @@
 
-<%= form_with(model: @spot, local: true) do |f| %>
+<%= form_with(model: @spot, local: true, html: { multipart: true }) do |f| %>
   <div class="form-group">
     <%= f.label :name, 'スポット名称' %>
     <%= f.text_field :name, class: 'form-control' %>
   </div>
   
+  <div class="form-group">
+    <%= f.label :picture, 'スポット写真' %>
+    <p><%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %></p>
+  </div>
+
   <div class="form-group">
     <%= f.label :address, '住所' %>
     <%= f.text_field :address, class: 'form-control' %>
