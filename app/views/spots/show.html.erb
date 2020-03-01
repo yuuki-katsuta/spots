@@ -1,5 +1,5 @@
 <p>スポット名 <%= @spot.name %></p>
 <p>住所 <%= @spot.address %></p>
 <p>説明 <%= @spot.about %></p>
-<%= image_tag @spot.picture.url if @spot.picture? %>
+<%= image_tag @spot.picture.url(:thumb) if @spot.picture? %>
     
