@@ -1,6 +1,6 @@
 class SpotsController < ApplicationController
-before_action :require_user_logged_in
-before_action :correct_user, only: [:destroy]
+  before_action :require_user_logged_in
+  before_action :correct_user, only: [:destroy]
   
   def new
     @spot = current_user.spots.new

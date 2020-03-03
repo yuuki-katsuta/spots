@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-   before_action :require_user_logged_in, only: [:index, :show]
+   before_action :require_user_logged_in, only: [:index, :show, :likes]
    
   def index
     @users = User.order(id: :desc).page(params[:page]).per(15)
@@ -16,7 +16,7 @@ class UsersController < ApplicationController
   
   def likes
     @user = User.find(params[:id])
-    @subspots = @user.subspots.order(id: :desc).page(params[:page]).per(15)
+    @subspots = @user.subspots.joins(:favorites).references(:favorites).group('favorites.spot_id').order('max(favorites.id) DESC').page(params[:page]).per(15)
   end
 
   def create
