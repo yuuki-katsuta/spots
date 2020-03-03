@@ -12,7 +12,7 @@ before_action :correct_user, only: [:destroy]
   
   def destroy
     @spot.destroy
-    flash[:success] = 'メッセージを削除しました。'
+    flash[:success] = 'スポットを削除しました。'
     redirect_back(fallback_location: root_path)
   end
   
@@ -27,6 +27,22 @@ before_action :correct_user, only: [:destroy]
       render :new
     end
   end
+  
+  def edit
+    @spot = Spot.find(params[:id])
+  end
+  
+  def update
+    spot = Spot.find(params[:id])
+    spot.update(spot_params)
+    redirect_to spot
+    if spot.save
+      flash[:success] = 'スポットを更新しました。'
+    else
+      flash[:danger] = 'スポットの更新に失敗しました。'
+    end
+  end
+
 
   private
 

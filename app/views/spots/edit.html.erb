@@ -1,9 +1,7 @@
+<h3>編集画面</h3>
 <div class="row mb-4">
   <div class="col-sm-8 offset-sm-2">
     <%= form_with(model: @spot, local: true, html: { multipart: true }) do |f| %>
-    　<% if @spot.errors.any? %>
-    　   <%= render 'layouts/error_messages', model: f.object %>
-  　　<% end %>
       <div class="form-group">
         <%= f.label :name, 'スポット名称' %>
         <%= f.text_field :name, class: 'form-control' %>
@@ -21,7 +19,7 @@
       
       <div>
         <%= f.label :about, 'このスポットについての説明' %>
-        <%= f.text_area :about, placeholder: 'このスポットの良いところなど自由に記入しましょう！', size: "20x10", class: 'form-control' %>
+        <%= f.text_area :about, size: "20x10", class: 'form-control' %>
         <%= f.submit '投稿する', class: 'btn btn-outline-primary mt-5' %>
       </div>   
     <% end %>

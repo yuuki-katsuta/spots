@@ -1,3 +1,4 @@
+
 <div class="content">
   <div class="main">
     <h3><%= @spot.user.name %>さんの投稿</h3>
@@ -16,6 +17,11 @@
       <th>住所</th>
         <td><%= @spot.address %></td>
       </tr>
+      <th>このスポットの説明</th>
+        <td><%= @spot.about %></td>
+      </tr>
     </table>
-  
+  <div class="foot">
+    <%= link_to '投稿一覧へ戻る', user_path(@spot.user), class: "return" %>
+  </div>
 </div>    

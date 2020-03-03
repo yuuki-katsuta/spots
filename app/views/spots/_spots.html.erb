@@ -4,22 +4,21 @@
       <div class="show">
         <%= link_to spot.user.name, user_path(spot.user) %> <span class="text-muted">posted at <%= spot.created_at %></span>
         <div class="show-menu">
-          <div class="picture">
-           
             <% if spot.picture? %>
-              <%= image_tag spot.picture.url(:thumb100) %>
+              <%= image_tag spot.picture.url(:thumb100), class: 'image' %>
             <% else %>
-              <%= image_tag"l_e_others_501.png", size: '200x150' %>
+              <%= image_tag"l_e_others_501.png", size: '200x150', class: 'image' %>
             <% end %>
-          </div>
           <div class="side">
-            <p>スポット名　<%= truncate(spot.name, omission: '...', length: 20) %></p>
-            <p>住所　<%= truncate(spot.address, omission: '...', length: 20) %></p>
-            <p><%= link_to '詳細を見る', spot, id: spot.id %></p>
-            　<p><% if current_user == spot.user %>
-          <%= link_to "この投稿を削除する", spot, method: :delete, data: { confirm: "You sure?" } %>
-            　<% end %></p>
-            </p>
+            <ul>
+              <li>スポット名　<%= truncate(spot.name, omission: '...', length: 20) %></li>
+              <li>住所　<%= truncate(spot.address, omission: '...', length: 23) %></li>
+              <li><%= link_to '詳細を見る', spot, id: spot.id %></li>
+              <% if current_user == spot.user %>
+                <li><%= link_to '編集する', edit_spot_path(spot) %></li>
+                <li><%= link_to "この投稿を削除する", spot, method: :delete, data: { confirm: "You sure?" } %></li>
+              <% end %>
+            </ul>
           </div>
         </div>
       </div>
