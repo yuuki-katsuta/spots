@@ -22,6 +22,7 @@
       </tr>
     </table>
   <div class="foot">
+    <%= render "favorites/favorite", spot: @spot %>
     <%= link_to '投稿一覧へ戻る', user_path(@spot.user), class: "return" %>
   </div>
 </div>    

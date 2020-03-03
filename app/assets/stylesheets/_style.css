@@ -24,6 +24,7 @@
 }
 .side{
   padding-left: 15px;
+  margin: auto 0;
 }
 .side p{
   font-size: 17px;

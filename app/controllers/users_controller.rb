@@ -13,6 +13,11 @@ class UsersController < ApplicationController
   def new
     @user = User.new
   end
+  
+  def likes
+    @user = User.find(params[:id])
+    @subspots = @user.subspots.order(id: :desc).page(params[:page]).per(15)
+  end
 
   def create
     @user = User.new(user_params)

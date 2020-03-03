@@ -9,8 +9,13 @@ Rails.application.routes.draw do
   get 'spots/new', to: 'spots#new'
   post 'spots', to: 'spots#create'
   
-
-  
-  resources :users, only: [:index, :show, :new, :create]
+  resources :users, only: [:index, :show, :new, :create, :likes] do
+    member do
+      get :likes
+    end
+  end  
   resources :spots, only: [:destroy, :show, :edit, :update]
+  resources :favorites, only: [:create, :destroy]
+  
+  
 end
