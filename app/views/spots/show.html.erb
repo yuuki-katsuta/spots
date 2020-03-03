@@ -1,5 +1,21 @@
-<p>スポット名 <%= @spot.name %></p>
-<p>住所 <%= @spot.address %></p>
-<p>説明 <%= @spot.about %></p>
-<%= image_tag @spot.picture.url(:thumb) if @spot.picture? %>
-    
+<div class="content">
+  <div class="main">
+    <h3><%= @spot.user.name %>さんの投稿</h3>
+    <% if @spot.picture? %>
+      <%= image_tag @spot.picture.url(:thumb), class: 'image' %>
+    <% else %>
+      <%= image_tag"l_e_others_501.png", size: '500x300', class: 'image' %>
+    <% end %>
+  </div>
+    <table>
+      <tr>
+      <th>スポット名</th>
+        <td><%= @spot.name %></td>
+      </tr>
+      <tr>
+      <th>住所</th>
+        <td><%= @spot.address %></td>
+      </tr>
+    </table>
+  
+</div>    

@@ -1,11 +1,8 @@
-<% if logged_in? %>
-　
-<% else %>
-  <div class="center">
-    <div class="text-center">
-      <h1 class="pt-5 mb-5">My Spotへようこそ</h1>
-      <%= render 'text' %>
-      <%= render 'users/new' %>
-    </div>
+<div class="main-content">
+  <h1 class="heading pt-5 mb-4">My Spotへようこそ</h1>
+  <div class="wrapper">
+    <%= render 'text' %>
   </div>
-<% end %>
+  <%= render 'users/new' %>
+</div>
+
