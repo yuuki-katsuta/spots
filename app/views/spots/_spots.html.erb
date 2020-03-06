@@ -7,12 +7,20 @@
             <% if spot.picture? %>
               <%= image_tag spot.picture.url(:thumb100), class: 'image' %>
             <% else %>
-              <%= image_tag"l_e_others_501.png", size: '200x150', class: 'image' %>
+              <%= image_tag"l_e_others_501.png", size: '220x135', class: 'image' %>
             <% end %>
           <div class="side">
+            <table>
+              <tr>
+                <th>スポット名</th>
+                <td><%= truncate(spot.name, omission: '...', length: 20) %></td>
+              </tr>
+              <tr>
+                <th>住所</th>
+                <td><%= truncate(spot.address, omission: '...', length: 23) %></td>
+              </tr>
+            </table>
             <ul>
-              <li>スポット名　<%= truncate(spot.name, omission: '...', length: 20) %></li>
-              <li>住所　<%= truncate(spot.address, omission: '...', length: 23) %></li>
               <li><%= link_to '詳細を見る', spot, id: spot.id %></li>
               <% if current_user == spot.user %>
                 <li><%= link_to '編集する', edit_spot_path(spot) %></li>

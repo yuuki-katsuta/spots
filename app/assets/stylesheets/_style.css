@@ -23,15 +23,19 @@
   display: flex;
 }
 .side{
-  padding-left: 15px;
-  margin: auto 0;
+  padding-left: 40px;
+  padding-top: 10px;
 }
-.side p{
-  font-size: 17px;
+.side th{
+  padding-right: 10px;
 }
 .side li {
   display: list-item; 
   list-style-type: none;
+}
+.side ul{
+  padding-top: 5px;
+  padding-left: 0;
 }
 .image{
   border: solid 2px #000000;
@@ -56,7 +60,7 @@
   margin: 0 auto;
   width: 40%;
 }
-table{
+.description table{
   text-align: left;
   margin: 0 auto;
   margin-bottom: 20px;
@@ -64,23 +68,19 @@ table{
   border-spacing: 0;
 }
 
-table th{
+.description th{
   padding: 10px 0;
   border-bottom: solid 2px #ddd;
-  width: 25%;
+  width: 30%;
 }
 
-table td{
+.description td{
   border-bottom: solid 2px #ddd;
   padding: 10px 0;
 }
 .foot{
-  text-align: center;
   width: 60%;
   margin: 0 auto;
   margin-bottom: 50px;
 }
-.return{
-  text-align: left;
-  display: block;
-}
+

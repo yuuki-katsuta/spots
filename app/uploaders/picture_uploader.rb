@@ -7,7 +7,7 @@ class PictureUploader < CarrierWave::Uploader::Base
   end
   
   version :thumb100 do
-    process resize_to_fill: [200, 150]
+    process resize_to_fill: [220, 135]
   end
 
 

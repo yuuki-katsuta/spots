@@ -8,13 +8,14 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy'
   get 'spots/new', to: 'spots#new'
   post 'spots', to: 'spots#create'
-  
+  delete 'spots/:id', to: 'spots#destroy'
+  resources :spots, only: [:destroy, :show, :edit, :update]
   resources :users, only: [:index, :show, :new, :create, :likes] do
     member do
       get :likes
     end
   end  
-  resources :spots, only: [:destroy, :show, :edit, :update]
+
   resources :favorites, only: [:create, :destroy]
   
   

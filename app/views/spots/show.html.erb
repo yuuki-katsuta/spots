@@ -1,28 +1,29 @@
 
 <div class="content">
   <div class="main">
-    <h3><%= @spot.user.name %>さんの投稿</h3>
+    <h3><%= link_to @spot.user.name, user_path(@spot.user) %>さんの投稿</h3>
     <% if @spot.picture? %>
       <%= image_tag @spot.picture.url(:thumb), class: 'image' %>
     <% else %>
       <%= image_tag"l_e_others_501.png", size: '500x300', class: 'image' %>
     <% end %>
   </div>
+  <div class="description">
     <table>
       <tr>
-      <th>スポット名</th>
+        <th>スポット名</th>
         <td><%= @spot.name %></td>
       </tr>
       <tr>
-      <th>住所</th>
+        <th>住所</th>
         <td><%= @spot.address %></td>
       </tr>
-      <th>このスポットの説明</th>
-        <td><%= @spot.about %></td>
+        <th>このスポットの説明</th>
+        <td><%= simple_format(@spot.about) %></td>
       </tr>
     </table>
+  </div>
   <div class="foot">
     <%= render "favorites/favorite", spot: @spot %>
-    <%= link_to '投稿一覧へ戻る', user_path(@spot.user), class: "return" %>
   </div>
 </div>    

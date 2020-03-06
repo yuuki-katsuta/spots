@@ -13,7 +13,8 @@ class SpotsController < ApplicationController
   def destroy
     @spot.destroy
     flash[:success] = 'スポットを削除しました。'
-    redirect_back(fallback_location: root_path)
+    redirect_to controller: 'users', action: 'show', id: current_user
+    
   end
   
   def create
