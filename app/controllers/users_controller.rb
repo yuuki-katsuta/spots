@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-   before_action :require_user_logged_in, only: [:index, :show, :likes]
+   before_action :require_user_logged_in, only: [:index, :show, :likes, :edit, :update]
+   before_action :correct_user, only: [:edit]
    
   def index
     @users = User.order(id: :desc).page(params[:page]).per(15)
@@ -14,11 +15,27 @@ class UsersController < ApplicationController
     @user = User.new
   end
   
+  def edit
+    @user = User.find(params[:id])
+  end
+  
   def likes
     @user = User.find(params[:id])
     @subspots = @user.subspots.joins(:favorites).references(:favorites).group('favorites.spot_id').order('max(favorites.id) DESC').page(params[:page]).per(15)
   end
-
+  
+  def update
+    @user = User.find(params[:id])
+    @user.update(user_params)
+    if @user.save
+      flash[:success] = 'ユーザー情報を編集しました。'
+      redirect_to controller: 'users', action: 'show', id: current_user
+    else
+      flash.now[:danger] = 'ユーザー情報の編集に失敗しました。'
+      render "users/edit"
+    end   
+  end
+  
   def create
     @user = User.new(user_params)
 
@@ -34,6 +51,11 @@ class UsersController < ApplicationController
   private
   
   def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, :introduce, :live, :image, :age, :sex, :image, :remove_image)
+  end
+  
+  def correct_user
+    @user = User.find(params[:id])
+    redirect_to(root_url) unless @user == current_user
   end
 end

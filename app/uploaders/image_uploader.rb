@@ -1,15 +1,10 @@
 # encoding: utf-8
 
-class PictureUploader < CarrierWave::Uploader::Base
+class ImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
-  version :thumb do
-    process resize_to_limit: [600, 400]
+  version :thumb225 do
+    process resize_to_fill: [230, 230]
   end
-  
-  version :thumb100 do
-    process resize_to_fill: [220, 135]
-  end
-
 
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
@@ -48,7 +43,7 @@ class PictureUploader < CarrierWave::Uploader::Base
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
   def extension_white_list
-  %w(jpg jpeg gif png)
+    %w(jpg jpeg gif png)
   end
 
   # Override the filename of the uploaded files:
@@ -56,5 +51,5 @@ class PictureUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
-  
+
 end

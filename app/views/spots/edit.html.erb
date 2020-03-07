@@ -2,6 +2,10 @@
 <div class="row mb-4">
   <div class="col-sm-8 offset-sm-2">
     <%= form_with(model: @spot, local: true, html: { multipart: true }) do |f| %>
+      <% if @user.errors.any? %>
+    　   <%= render 'layouts/error_messages', model: f.object %>
+  　　<% end %>
+  　　
       <div class="form-group">
         <%= f.label :name, 'スポット名称' %>
         <%= f.text_field :name, class: 'form-control' %>
@@ -10,6 +14,7 @@
       <div class="form-group">
         <%= f.label :picture, 'スポット写真' %>
         <p><%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %></p>
+        <p><%= f.check_box :remove_picture %>画像を設定しない</p>
       </div>
     
       <div class="form-group">

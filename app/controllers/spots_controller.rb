@@ -1,6 +1,6 @@
 class SpotsController < ApplicationController
   before_action :require_user_logged_in
-  before_action :correct_user, only: [:destroy]
+  before_action :correct_user, only: [:destroy, :edit]
   
   def new
     @spot = current_user.spots.new
@@ -14,7 +14,6 @@ class SpotsController < ApplicationController
     @spot.destroy
     flash[:success] = 'スポットを削除しました。'
     redirect_to controller: 'users', action: 'show', id: current_user
-    
   end
   
   def create
@@ -44,12 +43,10 @@ class SpotsController < ApplicationController
     end
   end
 
-
   private
-
-    # 投稿フォームからデータ抽出
+  
   def spot_params
-    params.require(:spot).permit(:name, :address, :about, :picture)
+    params.require(:spot).permit(:name, :address, :about, :picture, :remove_picture)
   end
   
   def correct_user

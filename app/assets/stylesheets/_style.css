@@ -83,4 +83,9 @@
   margin: 0 auto;
   margin-bottom: 50px;
 }
-
+.user-menu{
+  width: 84%;
+}
+.user-menu th{
+  padding-right: 20px;
+}
