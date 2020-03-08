@@ -66,7 +66,6 @@
   margin-bottom: 20px;
   width: 60%;
 }
-
 .description th{
   padding: 10px 0;
   border-bottom: solid 2px #ddd;
@@ -82,12 +81,15 @@
   margin-bottom: 50px;
 }
 .user-menu{
-  width: 84%;
+
+  width: 105%;
 }
-.user-menu span{
-  padding-right: 20px;
-  font-size: large;
+.user-menu p{
+  font-size: 15.5px;
+  text-align: left;
+  display: inline-block;
 }
-ul{
-  padding-left: 10px;
+.item{
+  width: 80%;
+  text-align: center
 }

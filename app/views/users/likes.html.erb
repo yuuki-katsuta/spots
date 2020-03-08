@@ -1,74 +1,41 @@
 <div class="row">
   <aside class="col-sm-4">
     <div class="aside-menu">
-      <% if current_user == @user %>
-        <% if @user.image? %>
-          <%= image_tag @user.image.url(:thumb225), class: 'rounded-circle image mt-5' %>
-          <h2 class="pl-2 pb-2"><%= @user.name %></h2>
-          <div class="user-menu">
-            <ul>
-              <% if @user.age? %>
-                <li><span>年齢</span><%= @user.age %>代</li>
-              <% end %>
-              <% if @user.sex? %>
-                <li><span>性別</span><%= @user.sex %></li>
-              <% end %>
-              <% if @user.live? %>
-                <li><span>地域</span><%= @user.live %></li>
-              <% end %>
-            </ul>
-            <p><%= simple_format(@user.introduce) %></p>
-          </div>
+      <div class="item">
+        <% if current_user == @user %>
+          <% if @user.image? %>
+            <%= image_tag @user.image.url(:thumb200), class: 'rounded-circle image mt-5' %>
+            <h2 class="pl-2 pb-2"><%= @user.name %></h2>
+            <div class="user-menu">
+              <p><%= simple_format(@user.introduce) %></p>
+            </div>
+          <% else %>
+            <%= image_tag"noimage.png", size: '200x200', class: 'rounded-circle image mt-5 mb-2' %>
+            <h2 class="pl-2"><%= @user.name %></h2>
+            <div class="user-menu">
+              <p><%= simple_format(@user.introduce) %></p>
+            </div>
+          <% end %>
         <% else %>
-          <%= image_tag"noimage.png", class: 'rounded-circle image mt-5 mb-2' %>
-          <h2 class="pl-2"><%= @user.name %></h2>
-          
-          <div class="user-menu">
-            <ul>
-              <% if @user.age? %>
-                <li><span>年齢</span><%= @user.age %>代</li>
-              <% end %>
-              <% if @user.sex? %>
-                <li><span>性別</span><%= @user.sex %></li>
-              <% end %>
-              <% if @user.live? %>
-                <li><span>地域</span><%= @user.live %></li>
-              <% end %>
-            </ul>
-            <p><%= simple_format(@user.introduce) %></p>
-          </div>
-          
+          <% if @user.image?%>
+            <%= image_tag @user.image.url(:thumb200), class: 'rounded-circle image mt-5' %>
+            <h2 class="pl-2"><%= @user.name %></h2>
+            <div class="user-menu">
+              <p><%= simple_format(@user.introduce) %></p>
+            </div>
+          <% else %>
+            <%= image_tag"noimage.png", size: '200x200', class: 'rounded-circle image mt-5 mb-2' %>
+            <h2 class="pl-2"><%= @user.name %></h2>
+          <% end %>
         <% end %>
-      <% else %>
-        <% if @user.image?%>
-          <%= image_tag @user.image.url(:thumb225), class: 'rounded-circle image mt-5' %>
-          <h2 class="pl-2"><%= @user.name %></h2>
-          <div class="user-menu">
-            <ul>
-              <% if @user.age? %>
-                <li><span>年齢</span><%= @user.age %>代</li>
-              <% end %>
-              <% if @user.sex? %>
-                <li><span>性別</span><%= @user.sex %></li>
-              <% end %>
-              <% if @user.live? %>
-                <li><span>地域</span><%= @user.live %></li>
-              <% end %>
-            </ul>
-            <p><%= simple_format(@user.introduce) %></p>
-          </div>
-        <% else %>
-          <%= image_tag"noimage.png", class: 'rounded-circle image mt-5 mb-2' %>
-          <h2 class="pl-2"><%= @user.name %></h2>
+        <% if current_user == @user %>
+          <p><%= link_to 'プロフィールを編集する', edit_user_path(@user) %></p>
+          <p><%= link_to '投稿する', spots_new_path %></p>
         <% end %>
-      <% end %>
-      <% if current_user == @user %>
-        <p><%= link_to 'プロフィールを編集する', edit_user_path(@user) %></p>
-        <p><%= link_to '投稿する', spots_new_path %></p>
-      <% end %>
+      </div>
     </div>
   </aside>
-  <div class="col-sm-8 pl-4">
+  <div class="col-sm-8 pl-5">
     <ul class="nav nav-tabs nav-justified mb-3">
       <li class="nav-item"><a href="<%= user_path(@user) %>" class="nav-link <%= 'active' if current_page?(user_path(@user)) %>">投稿一覧  <span class="badge badge-secondary"><%= @count_spots %></span></a></li>
       <li class="nav-item"><a href="<%= likes_user_path(@user) %>" class="nav-link <%= 'active' if current_page?(likes_user_path(@user)) %>">お気に入り  <span class="badge badge-secondary"><%= @count_favorites %></span></a></li>

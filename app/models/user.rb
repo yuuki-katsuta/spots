@@ -6,9 +6,6 @@ class User < ApplicationRecord
                     uniqueness: { case_sensitive: false }
   has_secure_password
   validates :introduce, length: { maximum: 255 }
-  validates :live, presence: true,length: { maximum: 50 }, on: :user_update
-  validates :age, presence: true, on: :user_update
-  validates :sex, presence: true, on: :user_update
   has_many :spots
   has_many :favorites
   has_many :subspots, through: :favorites, source: :spot

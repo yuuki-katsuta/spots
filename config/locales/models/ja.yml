@@ -1,0 +1,14 @@
+ja:
+  activerecord:
+    models:
+      user: 
+      spot:
+    attributes:
+      user:
+        name: ユーザ名
+        email: メールアドレス
+        password: パスワード
+      spot:
+        name: スポット名
+        address: 住所
+        about: スポットの説明文
