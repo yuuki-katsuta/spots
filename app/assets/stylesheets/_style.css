@@ -65,7 +65,6 @@
   margin: 0 auto;
   margin-bottom: 20px;
   width: 60%;
-  border-spacing: 0;
 }
 
 .description th{
@@ -73,7 +72,6 @@
   border-bottom: solid 2px #ddd;
   width: 30%;
 }
-
 .description td{
   border-bottom: solid 2px #ddd;
   padding: 10px 0;
@@ -86,6 +84,10 @@
 .user-menu{
   width: 84%;
 }
-.user-menu th{
+.user-menu span{
   padding-right: 20px;
+  font-size: large;
+}
+ul{
+  padding-left: 10px;
 }

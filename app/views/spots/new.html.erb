@@ -4,6 +4,7 @@
     　<% if @spot.errors.any? %>
     　   <%= render 'layouts/error_messages', model: f.object %>
   　　<% end %>
+  　　
       <div class="form-group">
         <%= f.label :name, 'スポット名称' %>
         <%= f.text_field :name, class: 'form-control' %>

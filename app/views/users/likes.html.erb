@@ -4,64 +4,57 @@
       <% if current_user == @user %>
         <% if @user.image? %>
           <%= image_tag @user.image.url(:thumb225), class: 'rounded-circle image mt-5' %>
-          <h2 class="pl-2"><%= @user.name %></h2>
+          <h2 class="pl-2 pb-2"><%= @user.name %></h2>
           <div class="user-menu">
-            <table>
-              <tr>
-                <th>年齢</th>
-                <td><%= @user.age %></td>
-              </tr>
-              <tr>
-                <th>性別</th>
-                <td><%= @user.sex %></td>
-              </tr>
-              <tr>
-                <th>地域</th>
-                <td><%= @user.live %></td>
-              </tr>
-            </table>
+            <ul>
+              <% if @user.age? %>
+                <li><span>年齢</span><%= @user.age %>代</li>
+              <% end %>
+              <% if @user.sex? %>
+                <li><span>性別</span><%= @user.sex %></li>
+              <% end %>
+              <% if @user.live? %>
+                <li><span>地域</span><%= @user.live %></li>
+              <% end %>
+            </ul>
             <p><%= simple_format(@user.introduce) %></p>
           </div>
         <% else %>
           <%= image_tag"noimage.png", class: 'rounded-circle image mt-5 mb-2' %>
           <h2 class="pl-2"><%= @user.name %></h2>
+          
           <div class="user-menu">
-            <table>
-              <tr>
-                <th>年齢</th>
-                <td><%= @user.age %></td>
-              </tr>
-              <tr>
-                <th>性別</th>
-                <td><%= @user.sex %></td>
-              </tr>
-              <tr>
-                <th>地域</th>
-                <td><%= @user.live %></td>
-              </tr>
-            </table>
+            <ul>
+              <% if @user.age? %>
+                <li><span>年齢</span><%= @user.age %>代</li>
+              <% end %>
+              <% if @user.sex? %>
+                <li><span>性別</span><%= @user.sex %></li>
+              <% end %>
+              <% if @user.live? %>
+                <li><span>地域</span><%= @user.live %></li>
+              <% end %>
+            </ul>
             <p><%= simple_format(@user.introduce) %></p>
           </div>
+          
         <% end %>
       <% else %>
         <% if @user.image?%>
-          <%= image_tag"noimage.png", class: 'rounded-circle image mt-5 mb-2' %>
+          <%= image_tag @user.image.url(:thumb225), class: 'rounded-circle image mt-5' %>
           <h2 class="pl-2"><%= @user.name %></h2>
           <div class="user-menu">
-            <table>
-              <tr>
-                <th>年齢</th>
-                <td><%= @user.age %></td>
-              </tr>
-              <tr>
-                <th>性別</th>
-                <td><%= @user.sex %></td>
-              </tr>
-              <tr>
-                <th>地域</th>
-                <td><%= @user.live %></td>
-              </tr>
-            </table>
+            <ul>
+              <% if @user.age? %>
+                <li><span>年齢</span><%= @user.age %>代</li>
+              <% end %>
+              <% if @user.sex? %>
+                <li><span>性別</span><%= @user.sex %></li>
+              <% end %>
+              <% if @user.live? %>
+                <li><span>地域</span><%= @user.live %></li>
+              <% end %>
+            </ul>
             <p><%= simple_format(@user.introduce) %></p>
           </div>
         <% else %>
