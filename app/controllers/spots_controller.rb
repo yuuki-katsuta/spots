@@ -33,15 +33,15 @@ class SpotsController < ApplicationController
   end
   
   def update
-    spot = Spot.find(params[:id])
-    spot.update(spot_params)
+    @spot = Spot.find(params[:id])
+    @spot.update(spot_params)
     
-    if spot.save
-      flash[:success] = 'スポットを更新しました。'
-      redirect_to spot
+    if @spot.save
+      flash[:success] = '投稿内容を更新しました。'
+      redirect_to @spot
     else
-      flash[:danger] = 'スポットの更新に失敗しました。'
-      redirect_to edit_spot_path
+      flash[:danger] = '投稿内容の更新に失敗しました。'
+      render :edit
     end
   end
 

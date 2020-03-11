@@ -1,17 +1,19 @@
 <% if users.any? %>
-  <ul class="list-unstyled">
-    <% users.each do |user| %>
-      <li class="media">
-        <div class="media-body">
-          <div>
-            <%= user.name %>
-          </div>
-          <div>
-            <p class="profile"><%= link_to 'View profile', user_path(user) %></p>
-          </div>
-        </div>
-      </li>
-    <% end %>
-  </ul>
+  <% users.each do |user| %>
+    
+    <div>
+      <% if user.image?%>
+            <%= image_tag user.image.url(:thumb100), class: 'rounded-circle image mt-5' %>
+      <% else %>
+            <%= image_tag"noimage.png", size: '100x100', class: 'rounded-circle image mt-5 mb-2' %>
+      <% end %>
+      <h3><%= link_to user.name, user_path(user) %></h3>
+      
+     
+    </div>
+    <div>
+      <p class="profile"><%= link_to 'マイページを見る', user_path(user) %></p>
+    </div>
+   <% end %>
   <%= paginate users %>
 <% end %>
