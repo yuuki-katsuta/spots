@@ -1,17 +1,17 @@
 <div class="row">
-  <aside class="col-sm-4">
+  <aside class="col-sm-3">
     <div class="aside-menu">
       <div class="item">
         <% if current_user == @user %>
           <% if @user.image? %>
             <%= image_tag @user.image.url(:thumb200), class: 'rounded-circle image mt-5' %>
-            <h2 class="pl-2 pb-2"><%= @user.name %></h2>
+            <h2 class="pb-2"><%= @user.name %></h2>
             <div class="user-menu">
               <p><%= simple_format(@user.introduce) %></p>
             </div>
           <% else %>
             <%= image_tag"noimage.png", size: '200x200', class: 'rounded-circle image mt-5 mb-2' %>
-            <h2 class="pl-2"><%= @user.name %></h2>
+            <h2 class="pb-2"><%= @user.name %></h2>
             <div class="user-menu">
               <p><%= simple_format(@user.introduce) %></p>
             </div>
@@ -19,13 +19,13 @@
         <% else %>
           <% if @user.image?%>
             <%= image_tag @user.image.url(:thumb200), class: 'rounded-circle image mt-5' %>
-            <h2 class="pl-2"><%= @user.name %></h2>
+            <h2 class="pb-2"><%= @user.name %></h2>
             <div class="user-menu">
               <p><%= simple_format(@user.introduce) %></p>
             </div>
           <% else %>
             <%= image_tag"noimage.png", size: '200x200', class: 'rounded-circle image mt-5 mb-2' %>
-            <h2 class="pl-2"><%= @user.name %></h2>
+            <h2 class="pb-2"><%= @user.name %></h2>
           <% end %>
         <% end %>
         <% if current_user == @user %>
@@ -35,7 +35,7 @@
       </div>
     </div>
   </aside>
-  <div class="col-sm-8 pl-5">
+  <div class="offset-sm-1 col-sm-7 pl-5">
     <ul class="nav nav-tabs nav-justified mb-3">
       <li class="nav-item"><a href="<%= user_path(@user) %>" class="nav-link <%= 'active' if current_page?(user_path(@user)) %>">投稿一覧  <span class="badge badge-secondary"></span></a></li>
       <li class="nav-item"><a href="<%= likes_user_path(@user) %>" class="nav-link <%= 'active' if current_page?(likes_user_path(@user)) %>">お気に入り  <span class="badge badge-secondary"></span></a></li>
