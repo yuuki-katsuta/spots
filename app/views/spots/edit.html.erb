@@ -1,5 +1,5 @@
-<div class="row mb-4">
-  <div class="col-sm-8 offset-sm-2">
+<div class="row mb-5 mt-5">
+  <div class="col-sm-6 offset-sm-3">
     <%= form_with(model: @spot, local: true) do |f| %>
       <% if @spot.errors.any? %>
         <%= render 'layouts/error_messages', model: f.object %>

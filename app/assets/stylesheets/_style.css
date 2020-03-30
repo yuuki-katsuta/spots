@@ -39,9 +39,7 @@
 }
 .image{
   border: solid 2px #000000;
-}
-.image{
-  margin-bottom: 20px;
+   margin-bottom: 20px;
 }
 .content{
   text-align: center;
@@ -52,9 +50,6 @@
   font-size: 20px;
   padding-top: 20px;
 }
-.main h3{
-  padding-bottom: 10px;
-}
 .btn{
   display: block;
   margin: 0 auto;
@@ -64,7 +59,7 @@
   text-align: left;
   margin: 0 auto;
   margin-bottom: 20px;
-  width: 60%;
+  width: 40%;
 }
 .description th{
   padding: 15px 0;
@@ -90,10 +85,28 @@ table p{
   display: inline-block;
 }
 .item{
-  width: 270px;
-  text-align: center
+  margin: 0 auto;
+  width: 60%;
+  text-align: center;
 }
-.container{
-  padding-right: 0;
+.home{
+  width: 100%;
+  display: flex;
 }
-
+.sidebar{
+  width: 30%;
+  background: #EEEEEE;
+  height: auto;
+  min-height: 100vh;
+}
+.feature{
+  width: 70%;
+  background: #FFFFFF;
+}
+.tab{
+  margin: 0 auto;
+  width: 80%;
+}
+.avatar{
+  width: 75%;
+}

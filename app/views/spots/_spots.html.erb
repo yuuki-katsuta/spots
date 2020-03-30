@@ -7,17 +7,17 @@
             <% if spot.picture? %>
               <%= image_tag spot.picture.url(:thumb100), class: 'image' %>
             <% else %>
-              <%= image_tag"l_e_others_501.png", size: '220x135', class: 'image' %>
+              <%= image_tag"l_e_others_501.png", size: '224x139', class: 'image' %>
             <% end %>
           <div class="side">
             <table>
               <tr>
                 <th>スポット名</th>
-                <td><%= truncate(spot.name, omission: '...', length: 20) %></td>
+                <td><%= truncate(spot.name, omission: '...', length: 18) %></td>
               </tr>
               <tr>
                 <th>住所</th>
-                <td><%= truncate(spot.address, omission: '...', length: 20) %></td>
+                <td><%= truncate(spot.address, omission: '...', length: 18) %></td>
               </tr>
             </table>
             <ul>
