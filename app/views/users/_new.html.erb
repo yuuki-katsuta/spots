@@ -3,33 +3,33 @@
 </div>
 
 <div class="row mb-4">
-  <div class="col-sm-6 offset-sm-3">
+  <div class="col-sm-4 offset-sm-4">
     <%= form_with(model: @user, local: true) do |f| %>
       <% if @user.errors.any? %>
       　  <%= render 'layouts/error_messages', model: f.object %>
     　<% end %>
       
       <div class="form-group">
-        <%= f.label :name, 'Name' %>
+        <%= f.label :name, 'ユーザー名' %>
         <%= f.text_field :name, class: 'form-control' %>
       </div>
   
       <div class="form-group">
-        <%= f.label :email, 'Email' %>
+        <%= f.label :email, 'メールアドレス' %>
         <%= f.email_field :email, class: 'form-control' %>
       </div>
   
       <div class="form-group">
-        <%= f.label :password, 'Password' %>
+        <%= f.label :password, 'パスワード' %>
         <%= f.password_field :password, class: 'form-control' %>
       </div>
   
       <div class="form-group">
-        <%= f.label :password_confirmation, 'Confirmation' %>
+        <%= f.label :password_confirmation, 'パスワード（確認）' %>
         <%= f.password_field :password_confirmation, class: 'form-control' %>
       </div>
   
-      <%= f.submit '登録', class: 'btn btn-primary btn-block' %>
+      <%= f.submit '登録', class: 'btn btn-primary btn-block mt-2' %>
     <% end %>
     <p><%= link_to 'ユーザー登録済の方はこちら', login_path %></p>
   </div>

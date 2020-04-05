@@ -4,6 +4,9 @@
   display: inline-block;
   text-align: left;
 }
+.contents{
+  margin-top: 100px;
+}
 .heading{
   text-align: center;
 }
@@ -43,6 +46,7 @@
 }
 .content{
   text-align: center;
+  margin-top: 80px;
 }
 .main{
   display: inline-block;
@@ -85,28 +89,38 @@ table p{
   display: inline-block;
 }
 .item{
-  margin: 0 auto;
-  width: 60%;
+  margin: 100px auto 0;
+  width: 80%;
   text-align: center;
+  
 }
 .home{
   width: 100%;
   display: flex;
 }
 .sidebar{
-  width: 30%;
-  background: #EEEEEE;
+  width: 25%;
+  background: #B0C4DE;
   height: auto;
   min-height: 100vh;
 }
 .feature{
-  width: 70%;
+  width: 75%;
   background: #FFFFFF;
 }
 .tab{
-  margin: 0 auto;
-  width: 80%;
+  margin: 70px auto 0;
+  width: 75%;
 }
 .avatar{
-  width: 75%;
+  
+}
+.navbar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.row{
+  margin-top: 80px;
 }
