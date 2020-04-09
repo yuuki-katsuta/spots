@@ -21,6 +21,6 @@ class User < ApplicationRecord
   end
   
   def favorite?(spot)
-  spot.favorites.where(user_id: id).any?
+   spot.favorites.where(user_id: id).any?
   end
 end
