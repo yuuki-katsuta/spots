@@ -49,6 +49,9 @@ test:
 #
 production:
   <<: *default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
   database: spots_production
   username: spots
   password: <%= ENV['SPOTS_DATABASE_PASSWORD'] %>

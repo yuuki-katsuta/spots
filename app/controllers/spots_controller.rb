@@ -12,7 +12,7 @@ class SpotsController < ApplicationController
   
   def destroy
     @spot.destroy
-    flash[:success] = 'スポットを削除しました。'
+    flash[:success] = 'スポットを削除しました !'
     redirect_to controller: 'users', action: 'show', id: current_user
   end
   
@@ -20,10 +20,10 @@ class SpotsController < ApplicationController
     @spot = current_user.spots.build(spot_params)
 
     if @spot.save
-      flash[:success] = 'スポットを投稿しました。'
+      flash[:success] = 'スポットを投稿しました !'
       redirect_to controller: 'users', action: 'show', id: current_user
     else
-      flash.now[:danger] = 'スポットの投稿に失敗しました。'
+      flash.now[:danger] = 'スポットの投稿に失敗しました !'
       render :new
     end
   end
@@ -37,10 +37,10 @@ class SpotsController < ApplicationController
     @spot.update(spot_params)
     
     if @spot.save
-      flash[:success] = '投稿内容を更新しました。'
+      flash[:success] = '投稿内容を更新しました !'
       redirect_to @spot
     else
-      flash[:danger] = '投稿内容の更新に失敗しました。'
+      flash[:danger] = '投稿内容の更新に失敗しました !'
       render :edit
     end
   end

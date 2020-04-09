@@ -14,3 +14,10 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+//= require jquery
+/* globals $ */
+$(function(){
+  setTimeout("$('.feedout').fadeOut('slow')", 2000);
+});
+
+

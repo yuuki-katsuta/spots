@@ -28,10 +28,10 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.update(user_params)
     if @user.save(context: :user_update)
-      flash[:success] = 'ユーザー情報を編集しました。'
+      flash[:success] = 'ユーザー情報を編集しました !'
       redirect_to controller: 'users', action: 'show', id: current_user
     else
-      flash.now[:danger] = 'ユーザー情報の編集に失敗しました。'
+      flash.now[:danger] = 'ユーザー情報の編集に失敗しました !'
       render "users/edit"
     end   
   end
@@ -40,10 +40,10 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      flash[:success] = 'ユーザを登録しました。'
+      flash[:success] = 'ユーザを登録しました !'
       redirect_to @user
     else
-      flash.now[:danger] = 'ユーザの登録に失敗しました。'
+      flash.now[:danger] = 'ユーザの登録に失敗しました !'
       render :new
     end
   end
