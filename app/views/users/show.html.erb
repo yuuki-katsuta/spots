@@ -1,36 +1,40 @@
 <div class="home">
   <div class="sidebar">
     <div class="item">
-      <% if current_user == @user %>
-        <% if @user.image? %>
-          <%= image_tag @user.image.url(:thumb170), class: 'avatar rounded-circle image mt-5' %>
-          <h3 class="pb-2"><%= @user.name %></h3>
-          <div class="user-menu">
-            <p><%= simple_format(@user.introduce) %></p>
-          </div>
+      <div class="user-image">
+        <% if current_user == @user %>
+          <% if @user.image? %>
+            <%= image_tag @user.image.url(:thumb170), class: 'avatar rounded-circle image mt-5' %>
+            <h3 class="pb-2"><%= @user.name %></h3>
+            <div class="user-menu">
+              <p><%= simple_format(@user.introduce) %></p>
+            </div>
+          <% else %>
+            <%= image_tag"noimage.png", size: '170x170', class: 'avatar rounded-circle image mt-5' %>
+            <h3 class="pb-2"><%= @user.name %></h3>
+            <div class="user-menu">
+              <p><%= simple_format(@user.introduce) %></p>
+            </div>
+          <% end %>
         <% else %>
-          <%= image_tag"noimage.png", size: '170x170', class: 'avatar rounded-circle image mt-5' %>
-          <h3 class="pb-2"><%= @user.name %></h3>
-          <div class="user-menu">
-            <p><%= simple_format(@user.introduce) %></p>
-          </div>
+          <% if @user.image? %>
+            <%= image_tag @user.image.url(:thumb170), class: 'avatar rounded-circle image mt-5' %>
+            <h3 class="pb-2"><%= @user.name %></h3>
+            <div class="user-menu">
+              <p><%= simple_format(@user.introduce) %></p>
+            </div>
+          <% else %>
+            <%= image_tag"noimage.png", size: '170x170', class: 'avatar rounded-circle image mt-5' %>
+            <h3 class="pb-2"><%= @user.name %></h3>
+          <% end %>
         <% end %>
-      <% else %>
-        <% if @user.image?%>
-          <%= image_tag @user.image.url(:thumb170), class: 'avatar rounded-circle image mt-5' %>
-          <h3 class="pb-2"><%= @user.name %></h3>
-          <div class="user-menu">
-            <p><%= simple_format(@user.introduce) %></p>
-          </div>
-        <% else %>
-          <%= image_tag"noimage.png", size: '170x170', class: 'avatar rounded-circle image mt-5' %>
-          <h3 class="pb-2"><%= @user.name %></h3>
+      </div>
+      <div class="post">
+        <% if current_user == @user %>
+          <p><%= link_to 'プロフィールを編集する', edit_user_path(@user) %></p>
+          <p><%= link_to '投稿する', spots_new_path, class: 'btn btn-primary w-75' %></p>
         <% end %>
-      <% end %>
-      <% if current_user == @user %>
-        <p><%= link_to 'プロフィールを編集する', edit_user_path(@user) %></p>
-        <p><%= link_to '投稿する', spots_new_path %></p>
-      <% end %>
+      </div>
     </div>
   </div>
   <div class="feature pt-5">

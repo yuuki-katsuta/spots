@@ -21,7 +21,7 @@ class UsersController < ApplicationController
   
   def likes
     @user = User.find(params[:id])
-    @subspots = @user.subspots.order(id: :desc).page(params[:page]).per(15)
+    @subspots = @user.subspots.joins(:favorites).group('favorites.spot_id').order('max(favorites.id) DESC').page(params[:page]).per(15)
   end
   
   def update

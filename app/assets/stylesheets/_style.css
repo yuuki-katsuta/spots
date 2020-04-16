@@ -1,4 +1,5 @@
 html{
+  overflow-x: hidden;
   position: relative;
 }
 .txt {
@@ -6,12 +7,16 @@ html{
   font-size: 20px;
   display: inline-block;
   text-align: left;
+  color: #EEEEEE;
 }
 .contents{
   margin-top: 100px;
 }
 .heading{
+  font-size: 3.2rem;
   text-align: center;
+  padding-top: 160px;
+  color: #EEEEEE;
 }
 .wrapper{
   margin: 0 auto;
@@ -94,7 +99,7 @@ table p{
 }
 .item{
   margin: 100px auto 0;
-  width: 80%;
+  width: 270px;
   text-align: center;
 }
 .home{
@@ -102,7 +107,7 @@ table p{
   display: flex;
 }
 .sidebar{
-  width: 25%;
+  width: 300px;
   background: #B0C4DE;
   height: auto;
   min-height: 100vh;
@@ -110,6 +115,7 @@ table p{
 .feature{
   width: 75%;
   background: #F8F8FF;
+  margin: 0 auto;
 }
 .tab{
   margin: 70px auto 0;
@@ -135,10 +141,19 @@ table p{
   margin: auto;
   width: 30%;
   top: 3px;
-   z-index: 1;
-   opacity: 0.9;
+  z-index: 1;
+  opacity: 0.9;
 }
 body{
   background-color: #F8F8FF
 }
-
+.unit{
+  display: flex;
+  width: 33%;
+  margin-bottom: 20px;
+}
+.list{
+  padding: 150px 0 100px 50px;
+  display: flex;
+  flex-wrap: wrap;
+}
