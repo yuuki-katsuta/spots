@@ -1,9 +1,26 @@
+@media screen and (max-width: 1210px){
+.unit{
+  width: 50%;
+}
+.list{
+  padding-left: 80px;
+}
+}
 @media screen and (max-width: 1170px){
 .tab{
   width: 95%;
 }
+.btn-edit, .btn-favorite{
+  width: 75%;
+}
+.description table {
+  width: 70%;
+}
 }
 @media screen and (max-width: 970px){
+.description table {
+  width: 80%;
+}
 .topimage{
   padding: 0;
 }
@@ -11,9 +28,9 @@
   min-height: 80vh;
 }
 .item {
-    margin: 50px auto 0;
-    width: 450px;
-    text-align: center;
+  margin: 50px auto 0;
+  width: 450px;
+  text-align: center;
 }
 .user-menu p{
   font-size: 17px;
@@ -34,8 +51,15 @@
 .feature{
   width: 100%;
 }
+.unit{
+  width: 60%;
+  
+}
 }
 @media screen and (max-width: 690px){
+.sidebar{
+  padding-bottom: 20px;
+}
 .txt{
   margin-left: 10px;
 }
@@ -68,6 +92,21 @@ table {
  width: 400px;
  height: 280px;
  }
+.list{
+ padding-left: 20px;
+ }
+.unit{
+  margin: 0;
+  width: 100%;
+}
+.list h3{
+  font-size: 20px;
+  line-height: 2;
+}
+.spots-paginate .pagination{
+  justify-content: center;
+}
+ 
 }
 @media screen and (max-width: 570px){
 form{

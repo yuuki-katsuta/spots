@@ -93,13 +93,16 @@ table p{
 }
 .user-menu p{
   line-height: 1.4;
-  font-size: 15.3px;
+  font-size: 15.5px;
   text-align: left;
   display: inline-block;
 }
+.user-menu{
+  word-break: break-all;
+}
 .item{
   margin: 100px auto 0;
-  width: 270px;
+  width: 280px;
   text-align: center;
 }
 .home{
@@ -107,7 +110,7 @@ table p{
   display: flex;
 }
 .sidebar{
-  width: 300px;
+  width: 310px;
   background: #B0C4DE;
   height: auto;
   min-height: 100vh;
@@ -153,7 +156,10 @@ body{
   margin-bottom: 20px;
 }
 .list{
-  padding: 150px 0 100px 50px;
+  padding: 150px 0 50px 30px;
   display: flex;
   flex-wrap: wrap;
+}
+.users-paginate .pagination{
+  justify-content: center;
 }

@@ -7,9 +7,11 @@
         <% else %>
           <%= image_tag"noimage.png", size: '100x100', class: 'rounded-circle image' %>
         <% end %>
-        <h3><%= link_to user.name, user_path(user) %></h3>
+        <h3 class="pl-4"><%= link_to user.name, user_path(user) %></h3>
       </div>
     <% end %>
-    <%= paginate users %>
   <% end %>
+</div>
+<div class="users-paginate">
+  <%= paginate users, class: 'paginate' %>
 </div>
