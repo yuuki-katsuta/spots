@@ -53,10 +53,13 @@
 }
 .unit{
   width: 60%;
-  
+}
+.feedout{
+  width: 65%;
 }
 }
 @media screen and (max-width: 690px){
+  
 .sidebar{
   padding-bottom: 20px;
 }
@@ -131,7 +134,7 @@ form{
  width: 350px;
  height: 200px;
  }
- .show{
+.media .show{
  margin: 0 auto;
 }
 }

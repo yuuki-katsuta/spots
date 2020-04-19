@@ -3,7 +3,7 @@
 </div>
 
 <div class="row mb-4 pt-4">
-  <div class="col-sm-4 offset-sm-4">
+  <div class="col-lg-4 offset-lg-4 col-sm-8 offset-sm-2">
     <%= form_with(model: @user, local: true) do |f| %>
       <% if @user.errors.any? %>
       　  <%= render 'layouts/error_messages', model: f.object %>
