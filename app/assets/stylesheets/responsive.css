@@ -17,7 +17,7 @@
   width: 70%;
 }
 }
-@media screen and (max-width: 970px){
+@media screen and (max-width: 1000px){
 .description table {
   width: 80%;
 }
@@ -58,8 +58,10 @@
   width: 65%;
 }
 }
-@media screen and (max-width: 690px){
-  
+@media screen and (max-width: 710px){
+.main .image{
+  width: 500px;
+}
 .sidebar{
   padding-bottom: 20px;
 }
@@ -112,6 +114,9 @@ table {
  
 }
 @media screen and (max-width: 570px){
+.main .image{
+  width: 400px;
+}
 form{
     padding: 0 20px;
   }
@@ -120,6 +125,9 @@ form{
 }
 }
 @media screen and (max-width: 430px){
+.main .image{
+  width: 350px;
+}
 .topimage .heading{
   font-size: 28px;
 }
@@ -131,7 +139,7 @@ form{
 }
 .media .image{
  margin: 0;
- width: 350px;
+ width: 340px;
  height: 200px;
  }
 .media .show{
