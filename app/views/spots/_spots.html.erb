@@ -2,7 +2,7 @@
   <% spots.each do |spot| %>
     <li class="media mb-3">
       <div class="show">
-        <%= link_to spot.user.name, user_path(spot.user) %> <span class="text-muted">posted at <%= spot.created_at %></span>
+        <%= link_to spot.user.name, user_path(spot.user) %> <span class="text-muted">posted at <%= spot.created_at.in_time_zone('Tokyo') %></span>
         <div class="show-menu">
             <% if spot.picture? %>
               <%= image_tag spot.picture.url(:thumb100), class: 'image' %>

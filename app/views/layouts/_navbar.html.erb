@@ -1,10 +1,13 @@
 <header>
   <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-    <div class="navbar-brand">My Spot</div>
+    <% if logged_in? %>
+      <%= link_to 'My Spot', user_path(current_user), class: "navbar-brand" %>
+    <% else %>
+      <%= link_to 'My Spot', root_path, class: "navbar-brand" %>
+    <% end %>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
       <span class="navbar-toggler-icon"></span>
     </button>
-
     <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
       <ul class="navbar-nav">
         <% if logged_in? %>
