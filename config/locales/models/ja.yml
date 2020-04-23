@@ -8,6 +8,7 @@ ja:
         name: ユーザ名
         email: メールアドレス
         password: パスワード
+        introduce: 自己紹介文
       spot:
         name: スポット名
         address: 住所
