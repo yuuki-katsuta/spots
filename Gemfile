@@ -31,7 +31,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'carrierwave', '~> 1.3', '>= 1.3.1'
 gem 'cloudinary'
-gem 'mini_magick',             '3.8.0'
+gem 'mini_magick',             '4.9.4'
 gem 'fog',                     '1.36.0'
 gem 'rmagick'
 gem 'rails-i18n'
