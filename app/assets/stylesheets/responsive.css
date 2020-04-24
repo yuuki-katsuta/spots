@@ -6,7 +6,7 @@
   padding-left: 80px;
 }
 }
-@media screen and (max-width: 1170px){
+@media screen and (max-width: 1210px){
 .tab{
   width: 95%;
 }
@@ -17,7 +17,10 @@
   width: 70%;
 }
 }
-@media screen and (max-width: 1000px){
+@media screen and (max-width: 1010px){
+.sidebar{
+  padding-bottom: 20px;
+}
 .description table {
   width: 80%;
 }
@@ -58,7 +61,7 @@
   width: 65%;
 }
 }
-@media screen and (max-width: 710px){
+@media screen and (max-width: 715px){
 .main .image{
   width: 500px;
 }
@@ -118,7 +121,7 @@ table {
   width: 400px;
 }
 form{
-    padding: 0 20px;
+  padding: 0 20px;
   }
 .row p{
   padding-left: 20px;
@@ -144,5 +147,12 @@ form{
  }
 .media .show{
  margin: 0 auto;
+}
+.side th, .side td{
+  font-size: 15px;
+}
+.side th{
+  padding: 0;
+　width: 20%;
 }
 }

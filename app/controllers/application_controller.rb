@@ -8,4 +8,9 @@ class ApplicationController < ActionController::Base
       redirect_to login_url
     end
   end
+  
+  def counts(user)
+    @count_spots = user.spots.count
+    @count_favorites = user.favorites.count
+  end
 end

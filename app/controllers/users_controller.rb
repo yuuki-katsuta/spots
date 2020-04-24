@@ -9,6 +9,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @spots = @user.spots.order(id: :desc).page(params[:page]).per(15)
+    counts(@user)
   end
 
   def new
@@ -22,6 +23,7 @@ class UsersController < ApplicationController
   def likes
     @user = User.find(params[:id])
     @subspots = @user.subspots.order(id: :desc).page(params[:page]).per(15)
+    counts(@user)
   end
   
   def update
