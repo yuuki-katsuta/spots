@@ -29,7 +29,8 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
-gem 'carrierwave',             '0.10.0'
+gem 'carrierwave', '~> 1.3', '>= 1.3.1'
+gem 'cloudinary'
 gem 'mini_magick',             '3.8.0'
 gem 'fog',                     '1.36.0'
 gem 'rmagick'
