@@ -1,2 +1,2 @@
-# TechAcademy オリジナルサービス
+## TechAcademy オリジナルサービス
 
