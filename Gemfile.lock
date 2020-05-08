@@ -239,7 +239,7 @@ GEM
     nokogiri (1.10.8)
       mini_portile2 (~> 2.4.0)
     pg (1.2.3)
-    puma (3.12.2)
+    puma (3.12.4)
     rack (2.2.2)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
@@ -346,7 +346,7 @@ DEPENDENCIES
   mini_magick (= 3.8.0)
   mysql2 (>= 0.4.4, < 0.6.0)
   pg (>= 0.18, < 2.0)
-  puma (~> 3.11)
+  puma (~> 3.12)
   rails (~> 5.2.2)
   rails-i18n
   rmagick
